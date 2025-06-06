@@ -1,0 +1,8 @@
+#navlist{
+display: flex;
+flex-direction: row;
+background-color: rgb(195, 255, 0);
+height: 100px;
+width: 100%;
+
+}
