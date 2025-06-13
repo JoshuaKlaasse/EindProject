@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 Route::get('/frequent', function () {
     return view('frequentlyasked'); // resources/views/FAQ.blade.php
