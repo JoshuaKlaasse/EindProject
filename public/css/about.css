@@ -1,0 +1,30 @@
+.text1{
+flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2em;
+    color: #3c2f2f;
+    margin-top: 20px;
+    
+    margin-bottom: 20px;
+    border: groove black 2px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+h1{
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: #5b3924;
+    margin-top: 50px;;
+}
+h2{
+    margin-top:30px;
+}
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    text-shadow: 1px 1px #ddd;
+}
+

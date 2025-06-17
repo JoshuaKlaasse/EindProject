@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/header_footer.css">
 </head>
 <body>
    
@@ -13,111 +14,101 @@
             <div id="logo">
                 <img src="../Images/logo.png" alt="logo" id ="logo">
             </div>
-            <a href="../views/login.html"><button class="button">Home</button></a>
+            <nav class="navigation">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+                <button class="btnlogin-popup">login</button>
+            </nav>
+
     </div>
     
-    <div id="container">
-        
-        <h1>Log in/Inloggen</h1>
-        <label><b>inlognaam</b></label><br>
-        <input type="text" id="inlognaam" onblur="Checkusername()"><br>
-        <div id="Usercheck"></div>
-        <label><b>wachtwoord</b></label><br>
-        <input type="password" id="wachtwoord" onblur="Checkpassword()"><br>
-        <div id="wachtwoordcheck"></div>
-        <button onclick="login()" id="login">log in</button>
+    <div class="wrapper">
+        <div class="form-box login">
+            <h2>Inloggen</h2>
+            <form action="#">
 
-        <div id="otherlinks">
-        <a draggable="false" href="../views/Home.blade.php">Register</a>
-        <a draggable="false" href="../views/Home.blade.php">Forgot Password</a>
-        </div>
+                <div class="input-box">
+                   <span class="icon">
+                      <ion-icon name="mail-outline"></ion-icon>
+                   </span>
+                   <input type="email" required>
+                   <label>Email</label>
+                </div>
 
-    
-        <div id="inloggen"></div>
-        <div id="inlogcheck"></div>
-        <div id="users"></div>
-    </div>
-    <script>
-        function login()
-        {   
-            let username = document.getElementById('inlognaam').value;
-            let password = document.getElementById('wachtwoord').value;
-
-            console.log( username + "Probeert in te loggen");
-            
-
-            if( username == "Chris" & password == "DeltionGeheim123!")
-            {
-                console.log("Welkom " + username + " inloggen is gelukt");
-                document.getElementById('inlogcheck').innerHTML = "Welkom " + username + " inloggen is gelukt";
-                Userstable();
-            }
-            else
-            {
-                console.log("Inloggen mislukt!");
-                document.getElementById('inlogcheck').innerHTML = "Inloggen mislukt!";
-            }
-            
-        }
-        function Checkusername()
-        {
-            let username = document.getElementById('inlognaam').value;
-            if( username.length < 3 )
-            {
-                document.getElementById('inlognaam').style.border = "2px solid red";
-                console.log("Gebruikersnaam moet 3 of meer karakters zijn");
-                document.getElementById('Usercheck').innerHTML = "Gebruikersnaam moet 3 of meer karakters zijn";
-            }
-            if(username.length > 3){
-                document.getElementById('Usercheck').innerHTML = "";
-                document.getElementById('inlognaam').style.border = "2px solid green";
-
-            }
-        }
-        function Checkpassword()
-        {
-            let password = document.getElementById('wachtwoord').value;
-            if( password.length < 10 )
-            {
-                document.getElementById('wachtwoord').style.border = "2px solid red";
-                console.log("wachtwoord moet 10 of meer karakters zijn");
-                document.getElementById('wachtwoordcheck').innerHTML = "wachtwoord moet 10 of meer karakters zijn";
-            }
-            if(password.length > 10){
-                document.getElementById('wachtwoordcheck').innerHTML = "";
-                 document.getElementById('wachtwoord').style.border = "2px solid green";
-            }
+                <div class="input-box">
+                   <span class="icon">
+                      <ion-icon name="lock-closed-outline"></ion-icon>
+                   </span>
+                   <input type="password" required>
+                   <label>Password</label>
+                </div>
                 
-            
-        }
-        let jsonArrayBMICategories=[
-            {"naam": "Chris",       "wachtwoord": "Deltion12345!!"},
-            {"naam": "Kevin",       "wachtwoord": "Deltion45678!!"},
-            {"naam": "Koos",        "wachtwoord": "DeltionX12345!"},
-            {"naam": "Marloes",     "wachtwoord": "DeltionY45678!"},
-            {"naam": "Ronald",      "wachtwoord": "DeltionZ12345!"},
-        ];
-        function Userstable()
-        {
-            let table ="<table border='1'>";
-            table += "<tr><th>naam</th><th>wachtwoord</th></tr>";
-            for (let i = 0; i < jsonArrayBMICategories.length; i++)
-            {
-                table += "<tr>";
-                table += "<td>" + jsonArrayBMICategories[i].naam + "</td>";
-                table += "<td>" + jsonArrayBMICategories[i].wachtwoord + "</td>";
-                table += "</tr>";
-            }
-            table += "</table>";
-            document.getElementById('users').innerHTML = table;
-        }
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                </div>
+    </div>
+    <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
+
+                <div class="input-box">
+                   <span class="icon">
+                      <ion-icon name="mail-outline"></ion-icon>
+                   </span>
+                   <input type="text" required>
+                   <label>Username</label>
+                </div>
+
+                <div class="input-box">
+                   <span class="icon">
+                      <ion-icon name="mail-outline"></ion-icon>
+                   </span>
+                   <input type="email" required>
+                   <label>Email</label>
+                </div>
+
+                <div class="input-box">
+                   <span class="icon">
+                      <ion-icon name="lock-closed-outline"></ion-icon>
+                   </span>
+                   <input type="password" required>
+                   <label>Password</label>
+                </div>
+                
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox">I Agree to the terms and conditions</label>
+                    
+                    
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>            
+</div>
+
+                    
+
         
-      
-    </script>
-    <div id="footer">
-    <p>&copy; 2025 Nederkwaliteit. All rights reserved.</p>
-    <div id="Footerlinks">
-            <a draggable="false" href="../frequent" id="FAQ">FAQ</a>
-        </div>
+        
+
+    
+        
+    </div>
+    
+        <script src="../js/login.js"></script>
+        
+    
+   
 </body>
 </html>

@@ -20,3 +20,7 @@ Route::get('/register', function () {
 Route::get('/terms', function () {
     return view('termsofservice'); // resources/views/terms-of-service.blade.php
 });
+
+Route::get('/about', function () {
+    return view('about');
+});

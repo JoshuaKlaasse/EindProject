@@ -1,138 +1,138 @@
-body{
-    background-color: #ACCBE1;
-    font-family: "Garamond", serif;
-    color: #3c2f2f;
-    line-height: 1.7;
-    margin: 0;; 
+
+
+#header{
+    margin-top:-70px;
+}
+.wrapper{
+    position: relative;
+    width: 440px;
+    height: 440px;
+    margin-top: 50px;
+    
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px    rgba(0,0,0,0.3);
+    display: flex;
+   overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    transition: height .2s ease;  
+    
+    
+}
+.wrapper.active{
+    height: 520px;
+}
+.wrapper .form-box{
+    width:100%;
+    padding: 40px;
+}
+/*.wrapper .form-box.login{
+    display: none;
+}*/
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+.wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.wrapper .form-box.register{
+    position: absolute;
+    transition: none;
+    transform: translateX(500px);
+}
+.wrapper.active .form-box.register{
+    transition: none;
+    transform: translateX(0);
+}
+.wrapper .icon-close
+.form-box h2{
+   font-size: 2em;
+   color: #162938;
+   text-align: center;
+}
+.input-box{
+    position: relative;
+    width: 100%;
+    height:50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+    
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left:5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+}
+.input-box input:focus ~ label,
+.input-box input:valid ~ label{
+    top: -5px;
+}
+.input-box input{
+   width: 100%;
+   height:100%;
+   background: transparent;
+    border: none;
+    outline: none;
+}
+.remember-forgot{
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    justify-content: space-between;
+    display: flex;
+}
+.remember-forgot label input {
+    accent-color: #162938;
+    margin-right: 3px;   
+} 
+.remember-forgot a{
+    
+    text-decoration: none;
+    font-weight: 600;
+}
+.remember-forgot  a:hover{
+    text-decoration: underline;
+}
+.btn{
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    
+}
+.login-register{
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+
+}
+.login-register p a {
+    
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-register p a:hover{
+    text-decoration: underline;
 }
 
-#container{
-    background: url('parchment-texture.jpg') repeat;
-    padding: 2em;
-    position: relative;
-    z-index: 1;
-   padding-top: 170px;
-    border: 4px double #8b5e3c;
-    background-color: #f0f8ff;
-    border-radius: 12px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.3);
-    max-width: 800px;
-    margin:auto;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-   
-    
-    
-}
-#button{
-    color: blue;
-}
-#label{
-    font-size: 20px;
-}
-#wachtwoordcheck{
-    color: red;
-}
-#Usercheck{
-    color: red;
-}
-#header{
-    display: flex;
-flex-direction: row;
-text-align: center;
-height: 100px;
-width: 100%;
-background-color: #637081;
-}
-#back{
-    position: absolute;
-    top: 8px;
-    right: 16px;
-    font-size: 30px;
-    color: white;
-a{
-    color: white;
-}
-    margin-top: 25px;
-    width: 7.5%;
-    display: flex;
-    justify-content: center; /* Horizontal center */
-    align-items: center;     /* Vertical center */
-               /* Set a height */
-}
 
 #logo{
-    width: 100px;
-    height: 100px;
-    
+    width: 90px;
+    height: 70px;;
     margin-left: 10px;
-}
-#otherlinks{
-    display: flex;
-    flex-direction: row;
-   justify-content: space-around;
-    
-    margin-top: 20px;
-}
-#inlognaam{
-    background-color: #7C98B3;
-    border:groove black 4px;
-    height: 40px;
-    width: 300px;
-    
-}
-#wachtwoord{
-    background-color: #7C98B3;
-    border:ridge black 4px;
-    height: 40px;
-    width: 300px;
-    
-}
-#login{
-    border: inset black 4px;
-}
-#footer{
-     display: flex;
-    flex-direction: row;
-    text-align: center;
-    height: 55px;
-    width: 100%;
-    color: white;
-    background-color: #637081;  
-}
-#Footerlinks{
-     position: absolute;
-    top: 740px;
-    right: 16px;
-    font-size: 30px;
-    
-}
-
-.button {
-  display: inline-block;
-  padding: 15px 25px;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #ACCBE1;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #859cad;
-  position: absolute;
-    top: 10px;
-    right: 1px;
-    font-size: 30px;
-    height:70px;
-}
-
-.button:hover {background-color: #87aac4}
-
-.button:active {
-  background-color: #87aac4;
-  box-shadow: 0 5px #859cad;
-  transform: translateY(4px);
 }
