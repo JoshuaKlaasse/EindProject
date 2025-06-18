@@ -24,6 +24,10 @@ Route::get('/terms', function () {
     return view('termsofservice'); // resources/views/terms-of-service.blade.php
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
 Route::get('/admin', function () {
     return view('admin'); // resources/views/terms-of-service.blade.php
 });

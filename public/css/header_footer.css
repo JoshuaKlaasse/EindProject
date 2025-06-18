@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "monospace";
+
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ACCBE1;
+    
+    color: #3c2f2f;
+    line-height: 1.7;
+    margin: 0;
+    
+}
+#header{
+    
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    padding: 20px 50px;
+    background: #637081;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.navigation a{
+    position: relative;
+    font-size: 2em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+.navigation .btnlogin-popup{
+    width: 200px;
+    height: 70px;
+    background: transparent;
+    border: 2px solid #fff;
+    color: white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 2em;;
+    margin-left: 15px;
+    margin-top:15px;
+    
+}
+
+.navigation .btnhome-popup{
+    
+    width: 250px;
+    height: 70px;
+    background: transparent;
+    border: 2px solid #fff;
+    color: white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 2em;
+    
+    text-align: center;
+    margin-left: 15px;
+    margin-top:15px;
+    
+}
+
+
+.navigation .btncart-popup{
+     width: 100px;
+    height: 70px;
+    background: transparent;
+    border: 2px solid #fff;
+    color: white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 2em;;
+    margin-left: 15px;
+    margin-top:15px;
+    transition: .5s;
+}
+
+.button-image2{
+    height:55px;
+    width: 50px;
+}
+#logo{
+    width: 100px;
+    height: 100px;
+    
+}

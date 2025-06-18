@@ -116,9 +116,6 @@
   </div>
   <div id="footer">
     <p>&copy; 2025 Nederkwaliteit. All rights reserved.</p>
-    <div id="Footerlinks">
-            <a draggable="false" href="../frequent" id="FAQ">FAQ</a>
-        </div>
   </div>
 </body>
 </html>
