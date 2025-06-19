@@ -10,17 +10,17 @@
 <body>
    
 
-    <div id ="header">
+      <div id ="header">
             <div id="logo">
                 <img src="../Images/logo.png" alt="logo" id ="logo">
             </div>
             <nav class="navigation">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
-                <button class="btnlogin-popup">login</button>
-            </nav>
+                <div class="header-links">
+                <a href="login"><button class="btnlogin-popup">login</button></a>
+
+                <a href="cart"><button class="btncart-popup"><img class="buttonimage" src="../images/basket-cart-icon-27.png"></img></button></a>
+                </div>             
+              </nav>
 
     </div>
     

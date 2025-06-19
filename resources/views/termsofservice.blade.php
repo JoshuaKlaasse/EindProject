@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <title>Terms of Service | FastThread Mercantile</title>
     <link rel="stylesheet" href="../css/TOS.css">
+    <link rel="stylesheet" href="../css/header_footer.css">
 </head>
 <body>
-    <div id="header">
-        <div id="logo">
-            <img src="../Images/logo.png" alt="FastThread Mercantile Logo" id="logo">
-        </div>
-        <a href="../views/login.html"><button class="button">Inloggen</button></a>
+      <div id ="header">
+            <div id="logo">
+                <img src="../Images/logo.png" alt="logo" id ="logo">
+            </div>
+            <nav class="navigation">
+                <div class="header-links">
+                <a href="login"><button class="btnlogin-popup">login</button></a>
+
+                <a href="cart"><button class="btncart-popup"><img class="buttonimage" src="../images/basket-cart-icon-27.png"></img></button></a>
+                </div>             
+              </nav>
+
     </div>
     <div class="parchment">
         <h1>📜 Terms of Service of FastThread Mercantile</h1>
@@ -53,11 +61,19 @@
 
         <p><em>Go now, noble shopper, and may thy parcels be swift and thy seams mostly intact.</em></p>
     </div>
-    <div id="footer">
-    <p>&copy; 2025 Nederkwaliteit. All rights reserved.</p>
-    <div id="Footerlinks">
-            <a draggable="false" href="../frequent" id="FAQ">FAQ</a>
-        </div>
+
+   <div class="footer">
+    <div class="motto">
+      <p>© Nederkwaliteit – Expect the worst, and we will still find a way to disappoint you.</p>
+    </div>
+    
+    <nav class="navigationfooter">
+                <a href="frequent">FAQ</a>
+                <a href="terms">TOS</a>
+                <a href="about">About Us</a>
+                <a href="contact">Contact</a>
+                
+            </nav>
   </div>
 </body>
 </html>

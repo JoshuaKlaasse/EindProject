@@ -24,3 +24,16 @@ Route::get('/terms', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::post('/contact', function () {
+    // You can handle the form data here, for now just return a success message
+    return back()->with('success', 'Thank you for contacting us!');
+})->name('contact.submit');
+
+Route::get('/cart', function () {
+    return view('cart');
+});
+

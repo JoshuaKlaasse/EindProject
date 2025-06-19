@@ -1,29 +1,4 @@
-body {
-    background-color: #ACCBE1;
-    font-family: "Garamond", serif;
-    color: #3c2f2f;
-    line-height: 1.7;
-    margin: 0;
-    
-}
- #header{
-    
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    height: 100px;
-    width: 100%;
-    background-color: #637081;
-    
-    
-}
-#logo{
-    width: 100px;
-    height: 100px;
-    margin-left: 10px;
-}
+
 .parchment {
     background: url('parchment-texture.jpg') repeat;
     padding: 2em;
@@ -31,7 +6,7 @@ body {
     z-index: 1;
    padding-top: 170px;
     border: 4px double #8b5e3c;
-    background-color: #f0f8ff;
+    background-color: #c4dff5;
     border-radius: 12px;
     box-shadow: 0 0 30px rgba(0,0,0,0.3);
     max-width: 800px;
@@ -68,51 +43,4 @@ ul {
 p em {
     font-style: italic;
     color: #7a6248;
-}
-#footer{
-     display: flex;
-    flex-direction: row;
-    text-align: center;
-    height: 55px;
-    width: 100%;
-    color: white;
-    background-color: #637081;  
-}
-#Footerlinks{
-     position: absolute;
-    top: 2295px;
-    right: 16px;
-    font-size: 30px;
-    a{
-        color: white;
-        text-decoration: none;
-    }
-    
-}
-.button {
-  display: inline-block;
-  padding: 15px 25px;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #ACCBE1;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #859cad;
-  position: absolute;
-    top: 10px;
-    right: 1px;
-    font-size: 30px;
-    height:70px;
-}
-
-.button:hover {background-color: #87aac4}
-
-.button:active {
-  background-color: #87aac4;
-  box-shadow: 0 5px #859cad;
-  transform: translateY(4px);
 }
