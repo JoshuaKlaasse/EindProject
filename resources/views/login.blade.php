@@ -27,7 +27,8 @@
     <div class="wrapper">
         <div class="form-box login">
             <h2>Inloggen</h2>
-            <form action="#">
+            <form method="POST" action="{{ url('/login') }}">
+                @csrf
 
                 <div class="input-box">
                    <span class="icon">
@@ -52,13 +53,15 @@
                 </div>
 
                 <button type="submit" class="btn">Login</button>
-                <div class="login-register">
-                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
-                </div>
+
+            </form>                
+            <div class="login-register">
+                <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+            </div>
     </div>
     <div class="form-box register">
             <h2>Registration</h2>
-            <form action="#">
+            <form method="POST" action="#">
 
                 <div class="input-box">
                    <span class="icon">
@@ -87,14 +90,13 @@
 
                 <div class="remember-forgot">
                     <label><input type="checkbox">I Agree to the terms and conditions</label>
-                    
-                    
                 </div>
 
                 <button type="submit" class="btn">Login</button>
                 <div class="login-register">
                     <p>Already have an account? <a href="#" class="login-link">Login</a></p>
-                </div>            
+                </div>     
+            </form>       
 </div>
 
                     
@@ -107,8 +109,5 @@
     </div>
     
         <script src="../js/login.js"></script>
-        
-    
-   
 </body>
 </html>

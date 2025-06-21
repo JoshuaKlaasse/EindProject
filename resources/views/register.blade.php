@@ -23,7 +23,6 @@
         <label><b>wachtwoord</b></label><br>
         <input type="password" id="wachtwoord" onblur="Checkpassword()"><br>
         <div id="wachtwoordcheck"></div>
-
         <button onclick="register()" id="register">registreer</button>
 
 </body>
