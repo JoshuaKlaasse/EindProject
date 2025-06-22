@@ -134,7 +134,7 @@
     <a href="frequent">FAQ</a>
     <a href="terms">TOS</a>
     <a href="about">About Us</a>
-    <a href="contact">Contact</a>
+    
   </nav>
 </div>
 </body>

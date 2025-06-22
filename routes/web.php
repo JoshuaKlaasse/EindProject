@@ -15,7 +15,9 @@ Route::get('/frequent', function () {
 Route::get('/login', function () {
     return view('login');
 });
-
+Route::get('/payment', function(){
+    return view('payment'); // resources/views/payment.blade.php
+});
 Route::get('/register', function () {
     return view('register');
 });
@@ -27,6 +29,10 @@ Route::get('/terms', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('/cart', function () {
+    return view('cart');
+}); 
 
 Route::get('/admin', function () {
     return view('admin'); // resources/views/terms-of-service.blade.php
