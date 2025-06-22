@@ -5,24 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/home/main.css">
-    <link rel="stylesheet" href="../css/home/header.css">
-    <link rel="stylesheet" href="../css/home/footer.css">
+    <link rel="stylesheet" href="../css/header_footer.css">
+    
 </head>
 <body>
     <div id="header">
-        <div id="logo">
-            <img src="../Images/logo.png" alt="logo" id="logo">
-        </div>
-        <div id="search_bar">
-            <form action="../search" method="get" id="search_form">
-                <input type="text" name="query" placeholder="Search...">
-                <button type="submt" id="search_icon">
-                    <img src="../Images/search.icon.png" alt="Search" id="search_icon_image">
-                </button>
-            </form>
-        </div>
-        <a href="../login"><button class="button" style="margin-right: 150px">Log in</button></a>
-        <a href="../cart"><button class="button"><img src="../images/cart.png" id="cart"></button></a>
+  <div id="logo">
+    <img src="../Images/logo.png" alt="logo" id="logo">
+  </div>
+  <nav class="navigation">
+    <div class="header-links">
+      <a href="login"><button class="btnlogin-popup">login</button></a>
+      <a href="cart"><button class="btncart-popup"><img class="buttonimage" src="../images/basket-cart-icon-27.png"></button></a>
+    </div>
+  </nav>
+</div>
+        
     </div>
     <div id="main_content">
         <div id="sales">
@@ -92,11 +90,16 @@
 
         </div>
     </div>              
-    <div id="footer">
-        <p>&copy; 2025 Nederkwaliteit. All rights reserved.</p>
-        <div id="Footerlinks">
-                <a draggable="false" href="../frequent" id="FAQ">FAQ</a>
-        </div>
-    </div>
+  <div class="footer">
+  <div class="motto">
+    <p>© Nederkwaliteit – Expect the worst, and we will still find a way to disappoint you.</p>
+  </div>
+  <nav class="navigationfooter">
+    <a href="frequent">FAQ</a>
+    <a href="terms">TOS</a>
+    <a href="about">About Us</a>
+    
+  </nav>
+</div>
 </body>
 </html>

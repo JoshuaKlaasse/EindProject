@@ -28,6 +28,9 @@ Route::get('/terms', function () {
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('/payment', function () {
+    return view('payment');
+});
 
 Route::get('/cart', function () {
     return view('cart');
