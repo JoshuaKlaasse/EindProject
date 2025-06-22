@@ -13,9 +13,6 @@
         <div id="logo">
             <img src="../Images/logo.png" alt="logo" id="logo">
         </div>
-        <button id="sidebar_button" onclick="toggleSidebar()">
-            <img src="../Images/sidebar.png" alt="Toggle Sidebar" id="sidebar_icon">
-        </button>
         <div id="search_bar">
             <form action="../search" method="get" id="search_form">
                 <input type="text" name="query" placeholder="Search...">
@@ -34,21 +31,30 @@
             </div>
 
             <div class="sales_product">
-                <h2>Product 1</h2>
-                <img src="../Images/product1.jpg" alt="Product 1" class="product_image">
-                <p class="priceProduct">€19.99</p>
+                <h2>{{$product1->name}}</h2>
+                <img src="{{ asset('/images/shirts/' . $product1->image) }}" alt="Product 1" class="product_image">
+                <p class="priceProduct">€{{$product1->price}}</p>
+                <form method="GET" action="{{ url('/order/' . $product1->id) }}">
+                    <button type="submit" class="btn">Bestel nu</button>
+                </form>
             </div>
 
             <div class="sales_product">
-                <h2>Product 2</h2>
-                <img src="../Images/product2.jpg" alt="Product 2" class="product_image">
-                <p class="priceProduct">€29.99</p>
+                <h2>{{$product2->name}}</h2>
+                <img src="{{ asset('/images/shirts/' . $product2->image) }}" alt="Product 2" class="product_image">
+                <p class="priceProduct">€{{$product2->price}}</p>
+                <form method="GET" action="{{ url('/order/' . $product2->id) }}">
+                    <button type="submit" class="btn">Bestel nu</button>
+                </form>
             </div>
 
             <div class="sales_product">
-                <h2>Product 3</h2>
-                <img src="../Images/product3.jpg" alt="Product 3" class="product_image">
-                <p class="priceProduct">€39.99</p>
+                <h2>{{$product4->name}}</h2>
+                <img src="{{ asset('/images/shirts/' . $product4->image) }}" alt="Product 3" class="product_image">
+                <p class="priceProduct">€{{$product4->price}}</p>
+                <form method="GET" action="{{ url('/order/' . $product4->id) }}">
+                    <button type="submit" class="btn">Bestel nu</button>
+                </form>
             </div>
         </div>
         <div id="Popular_product">
@@ -59,18 +65,38 @@
                 <div id=info>
                 </div>
                 <div class="popular_product">
-                    <h2>Shirt</h2>
-                    <img src="../Images/productA.jpg" alt="Product A" class="product_image">
-                    <p class="priceProduct">€49.99</p>
+                    <h2>{{$product3->name}}</h2>
+                    <img src="{{ asset('/images/shirts/' . $product3->image) }}" alt="Product 1" class="product_image">
+                    <p class="priceProduct">€{{$product3->price}}</p>
+                    <form method="GET" action="{{ url('/order/' . $product3->id) }}">
+                        <button type="submit" class="btn">Bestel nu</button>
+                    </form>
+                </div>
+                <div class="popular_product">
+                    <h2>{{$product5->name}}</h2>
+                    <img src="{{ asset('/images/shirts/' . $product5->image) }}" alt="Product 2" class="product_image">
+                    <p class="priceProduct">€{{$product5->price}}</p>
+                <form method="GET" action="{{ url('/order/' . $product5->id) }}">
+                    <button type="submit" class="btn">Bestel nu</button>
+                </form>
+                </div>
+                <div class="popular_product">
+                    <h2>{{$product6->name}}</h2>
+                    <img src="{{ asset('/images/shirts/' . $product6->image) }}" alt="Product 3" class="product_image">
+                    <p class="priceProduct">€{{$product6->price}}</p>
+                    <form method="GET" action="{{ url('/order/' . $product6->id) }}">
+                        <button type="submit" class="btn">Bestel nu</button>
+                    </form>
                 </div>
             </div>
 
         </div>
     </div>              
     <div id="footer">
-    <p>&copy; 2025 Nederkwaliteit. All rights reserved.</p>
-    <div id="Footerlinks">
-            <a draggable="false" href="../frequent" id="FAQ">FAQ</a>
+        <p>&copy; 2025 Nederkwaliteit. All rights reserved.</p>
+        <div id="Footerlinks">
+                <a draggable="false" href="../frequent" id="FAQ">FAQ</a>
+        </div>
     </div>
 </body>
 </html>
