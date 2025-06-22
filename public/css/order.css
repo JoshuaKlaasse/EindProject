@@ -37,7 +37,7 @@
 
 .product-price {
     font-size: 1.5rem;
-    color: #27ae60;
+    color: #4377f8;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -67,5 +67,5 @@
 
 .checkout-btn:focus {
     outline: none;
-    box-shadow: 0 0 5px #27ae60;
+    box-shadow: 0 0 5px #3eabf3;
 }
