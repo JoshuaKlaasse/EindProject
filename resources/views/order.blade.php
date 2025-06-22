@@ -21,10 +21,12 @@
               </nav>
     </div>
     <div class="order-container">
-        <h1 class="order-title">Bestel {{ $product->name }}</h1>
+        <h1 class="order-title">{{ $product->name }}</h1>
+        <h3 class="Product-title">{{ $product->name }} Descritpion</h3>
         <div class="order-product">
             <img src="{{ asset('/images/shirts/' . $product->image) }}" alt="{{ $product->name }}" class="product-image">
-            <div class="product-details">
+                
+                <p class="product-description">{{ $product->description }}</p>
                 <p class="product-price">Prijs: €{{ number_format($product->price, 2) }}</p>
                 <form method="POST" action="{{ url('/checkout') }}" class="checkout-form">
                     @csrf
