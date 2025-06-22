@@ -34,7 +34,7 @@
                    <span class="icon">
                       <ion-icon name="mail-outline"></ion-icon>
                    </span>
-                   <input type="email" required>
+                   <input type="email" name="email" required>
                    <label>Email</label>
                 </div>
 
@@ -42,7 +42,7 @@
                    <span class="icon">
                       <ion-icon name="lock-closed-outline"></ion-icon>
                    </span>
-                   <input type="password" required>
+                   <input type="password" name="password" required>
                    <label>Password</label>
                 </div>
                 
@@ -61,7 +61,7 @@
     </div>
     <div class="form-box register">
             <h2>Registration</h2>
-            <form method="POST" action="#">
+            <form method="POST" action="action="{{ url('/create') }}">
 
                 <div class="input-box">
                    <span class="icon">

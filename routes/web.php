@@ -1,16 +1,17 @@
 <?php
 
-
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LoginController;
 use App\Models\User;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'index']); 
+
+
 Route::get('/frequent', function () {
     return view('frequentlyasked'); // resources/views/FAQ.blade.php
 });
@@ -57,7 +58,7 @@ Route::post('/update/{id}', function (Request $request, $id) {
 
     $user->name = $request->input('name');
     $user->email = $request->input('email');
-    $user->password = $request->input('password'); 
+    $user->password = bcrypt($request->input('password')); 
     $user->save();
 
     return redirect('/user/profile')->with('success', 'User updated successfully');
@@ -150,7 +151,7 @@ Route::post('/create', function (Request $request) {
     $user = new User();
     $user->name = $validatedData['name'];
     $user->email = $validatedData['email'];
-    $user->password = $validatedData['password']; 
+    $user->password = bcrypt($validatedData['password']); 
     $user->save();
 
     return redirect('/user/profile')->with('success', 'User created successfully');
@@ -158,29 +159,8 @@ Route::post('/create', function (Request $request) {
 
 Route::get('/user/profile', [ProfileController::class, 'index']);
 
-Route::match(['GET', 'POST'],'/login', function (Request $request){
-    if ($request->isMethod('get')) {
-        return view('login'); // resources/views/login.blade.php
-    }
-    if ($request->isMethod('post')) {
-        $credentials = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|string',
-        ]);
-
-
-
-    if (Auth::attempt($credentials)) {
-        // Authentication passed
-        $request->session()->regenerate();
-        return redirect('/dashboard')->with('success', 'Logged in successfully!');
-    }
-
-    // Authentication failed
-    return back()->withErrors([
-        'email' => 'The provided credentials do not match our records.',
-    ]);
-    }});
+Route::get('/login', [LoginController::class, 'login']); // Toon de loginpagina
+Route::post('/login', [LoginController::class, 'authenticate']); // Verwerk de login
 
 // Route::get('/login', function () {
 //     return view('login');
@@ -191,3 +171,24 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware('auth');
 
+Route::get('/order/{id}', function ($id) {
+    $product = Product::find($id);
+
+    if (!$product) {
+        abort(404, 'Product not found');
+    }
+
+    return view('order', ['product' => $product]);
+});
+
+Route::post('/checkout', function (Request $request) {
+    $productId = $request->input('product_id');
+    $product = Product::find($productId);
+
+    if (!$product) {
+        abort(404, 'Product not found');
+    }
+
+    // Verwerk de bestelling (bijvoorbeeld opslaan in de database)
+    return redirect('/thank-you')->with('success', 'Bestelling geplaatst!');
+});

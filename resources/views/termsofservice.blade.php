@@ -18,7 +18,6 @@
                 <a href="cart"><button class="btncart-popup"><img class="buttonimage" src="../images/basket-cart-icon-27.png"></img></button></a>
                 </div>             
               </nav>
-
     </div>
     <div class="parchment">
         <h1>📜 Terms of Service of FastThread Mercantile</h1>
