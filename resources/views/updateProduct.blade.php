@@ -42,3 +42,15 @@
 
     <button type="submit">Update</button>
 </form>
+</div>
+<div class="footer">
+  <div class="motto">
+    <p>© Nederkwaliteit – Expect the worst, and we will still find a way to disappoint you.</p>
+  </div>
+  <nav class="navigationfooter">
+    <a href="frequent">FAQ</a>
+    <a href="terms">TOS</a>
+    <a href="about">About Us</a>
+    
+  </nav>
+</div>

@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    
+    <link rel="stylesheet" href="../css/header_footer.css">
+    <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
 <div id="header">
@@ -64,5 +66,16 @@ echo "</table>";
 tests
 
 <?php ?>
+<div class="footer">
+  <div class="motto">
+    <p>© Nederkwaliteit – Expect the worst, and we will still find a way to disappoint you.</p>
+  </div>
+  <nav class="navigationfooter">
+    <a href="frequent">FAQ</a>
+    <a href="terms">TOS</a>
+    <a href="about">About Us</a>
+    
+  </nav>
+</div>
 </body>
 </html>

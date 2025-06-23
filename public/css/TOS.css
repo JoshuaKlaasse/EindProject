@@ -2,17 +2,18 @@
 .parchment {
     background: url('parchment-texture.jpg') repeat;
     padding: 2em;
-    position: relative;
-    z-index: 1;
-   padding-top: 170px;
+    
+    margin-top: 200px;
+    
+   
     border: 4px double #8b5e3c;
     background-color: #c4dff5;
     border-radius: 12px;
     box-shadow: 0 0 30px rgba(0,0,0,0.3);
     max-width: 800px;
-    margin:auto;
+    
     margin-bottom: 20px;
-    margin-top: 20px;
+   
 }
 
 h1, h2 {

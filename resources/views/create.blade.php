@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Create User</title>
+    <link rel="stylesheet" href="../css/header_footer.css">
+    <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
 <div id="header">
@@ -50,5 +52,17 @@
 
     <button type="submit">Aanmaken</button>
 </form>
+</div>
+<div class="footer">
+  <div class="motto">
+    <p>© Nederkwaliteit – Expect the worst, and we will still find a way to disappoint you.</p>
+  </div>
+  <nav class="navigationfooter">
+    <a href="frequent">FAQ</a>
+    <a href="terms">TOS</a>
+    <a href="about">About Us</a>
+    
+  </nav>
+</div>
 </body>
 </html>

@@ -85,4 +85,16 @@
     @endforeach
     </table>
     <a href="{{ url('/createProduct') }}">Add Product</a>
+    
+</div>
+<div class="footer">
+  <div class="motto">
+    <p>© Nederkwaliteit – Expect the worst, and we will still find a way to disappoint you.</p>
+  </div>
+  <nav class="navigationfooter">
+    <a href="http://127.0.0.1:8000/frequent">FAQ</a>
+    <a href="http://127.0.0.1:8000/terms">TOS</a>
+    <a href="http://127.0.0.1:8000/about">About Us</a>
+    
+  </nav>
 </div>

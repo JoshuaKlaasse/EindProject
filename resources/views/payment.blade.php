@@ -4,90 +4,9 @@
   <meta charset="UTF-8">
   <title>Betaalmethode</title>
   <link rel="stylesheet" href="../css/header_footer.css">
+  <link rel="stylesheet" href="../css/payment.css">
   <style>
-    body {
-      background-color: #ACCBE1;
-      font-family: Arial, sans-serif;
-      color: #3c2f2f;
-      margin: 0;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      display: flex;
-      gap: 40px;
-    }
-    .left-box {
-      flex: 2;
-    }
-    .right-box {
-      flex: 1;
-      background-color: #ACCBE1;
-       border: 2px solid white;
-        border-radius: 5px;
-        backdrop-filter: blur(20px);
-        box-shadow: 0 0 30px    rgba(0,0,0,0.3);
-    }
-    h2 {
-      color: #3c2f2f;
-    }
-    label {
-      display: block;
-      margin: 10px 0 4px;
-    }
-    input[type="text"],
-    select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #000000;
-      background-color: #fff;
-      color: #ffffff;
-      border-radius: 3px;
-    }
-    .form-row {
-      display: flex;
-      gap: 100px;
-    }
-    .form-row > div {
-      flex: 1;
-    }
-    .checkbox-label {
-      display: flex;
-      align-items: center;
-      margin-top: 10px;
-    }
-    .checkbox-label input {
-      margin-right: 10px;
-    }
-    .submit-button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #a4d007;
-      color: #000;
-      font-weight: bold;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-    .submit-button:hover {
-      background-color: #b8f205;
-    }
-    .payment-icons {
-      margin-top: 10px;
-    }
-    .payment-icons img {
-      height: 32px;
-      margin: 4px;
-    }
-    a {
-      color: #162938;
-      
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+  
   </style>
 </head>
 <body>
