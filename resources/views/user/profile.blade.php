@@ -8,18 +8,19 @@
     <link rel="stylesheet" href="../css/header_footer.css">
 </head>
 <body>
-<div id="header">
-    <div id="logo">
-        <img src="../Images/logo.png" alt="logo" id="logo">
+ <div id ="header">
+            <div id="logo">
+                <img src="../Images/logo.png" alt="logo" id ="logo">
+            </div>
+            <nav class="navigation">
+                <div class="header-links">
+                <a href="http://127.0.0.1:8000/login"><button class="btnlogin-popup">login</button></a>
+
+                <a href="http://127.0.0.1:8000/cart"><button class="btncart-popup"><img class="buttonimage" src="../images/basket-cart-icon-27.png"></img></button></a>
+                </div>             
+              </nav>
+
     </div>
-    <nav class="navigation">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-        <button class="btnlogin-popup">login</button>
-    </nav>
-</div>
 <h1>Admin panel</h1>
 <div class="users">
     <h2>Users</h2>
@@ -76,4 +77,16 @@
     @endforeach
     </table>
     <a href="{{ url('/createProduct') }}">Add Product</a>
+    
+</div>
+<div class="footer">
+  <div class="motto">
+    <p>© Nederkwaliteit – Expect the worst, and we will still find a way to disappoint you.</p>
+  </div>
+  <nav class="navigationfooter">
+    <a href="http://127.0.0.1:8000/frequent">FAQ</a>
+    <a href="http://127.0.0.1:8000/terms">TOS</a>
+    <a href="http://127.0.0.1:8000/about">About Us</a>
+    
+  </nav>
 </div>
