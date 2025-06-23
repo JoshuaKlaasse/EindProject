@@ -1,0 +1,74 @@
+/* Algemene styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Container voor zoekresultaten */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 20px;
+    color: #27ae60;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+/* Styling voor de lijst */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Styling voor productafbeeldingen */
+.product-image {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling voor productdetails */
+li h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #333;
+}
+
+li p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    li {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-image {
+        width: 150px;
+    }
+}

@@ -104,3 +104,57 @@ body{
     font-weight: 500;
     margin-left: 40px;
 }
+
+/* Zoekbalk container styling */
+#search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.search-form {
+    position: relative; /* Zorg ervoor dat de knop absoluut binnen de container kan worden geplaatst */
+    width: 100%;
+    max-width: 400px; /* Stel een maximale breedte in voor de zoekbalk */
+}
+
+/* Tekstvak styling */
+.search-input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 50px; /* Zorg voor ruimte voor de knop */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Zoekknop styling */
+.search-button {
+    position: absolute; /* Plaats de knop absoluut binnen de container */
+    top: 50%; /* Centreer de knop verticaal */
+    right: 10px; /* Plaats de knop aan de rechterkant van het tekstvak */
+    transform: translateY(-50%);
+    background-color: #219cda;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.search-button:hover {
+    background-color: #30d1dc;
+    transform: scale(1.05);
+}
+
+.search-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px #35c4eb;
+}

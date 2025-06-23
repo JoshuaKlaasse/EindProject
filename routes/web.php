@@ -2,12 +2,13 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoginController;
 use App\Models\User;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 
 Route::get('/', [HomeController::class, 'index']); 
 
@@ -199,3 +200,14 @@ Route::post('/checkout', function (Request $request) {
     // Verwerk de bestelling (bijvoorbeeld opslaan in de database)
     return redirect('/thank-you')->with('success', 'Bestelling geplaatst!');
 });
+
+Route::get('/cart', function () {
+    return view('cart'); // resources/views/thankyou.blade.php
+});
+
+Route::get('/search', [ProductController::class, 'search']);
+
+Route::post('/cart/add', [CartController::class, 'addToCart']); // Voeg product toe aan winkelwagen
+Route::get('/cart', [CartController::class, 'showCart']); // Toon winkelwagen
+
+Route::post('/cart/remove', [CartController::class, 'removeFromCart']);

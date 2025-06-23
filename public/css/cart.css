@@ -28,8 +28,8 @@
 }
 
 .cart-item img {
-  width: 100px;
-  height: auto;
+  width: 200px;
+  height: 200px;
   border-radius: 6px;
 }
 
@@ -78,3 +78,40 @@
   cursor: pointer;
   margin-top: 1rem;
 } 
+
+/* Totaalprijs styling */
+.cart-total {
+  margin-top: 20px;
+  text-align: right; /* Plaats de totaalprijs rechts */
+  font-size: 1.5rem; /* Maak de tekst groter */
+  font-weight: bold; /* Maak de tekst vetgedrukt */
+  color: #2a80d7; /* Groene kleur voor de totaalprijs */
+}
+
+/* Checkout-knop styling */
+.checkout-button {
+  margin-top: 30px; /* Voeg ruimte boven de knop toe */
+  text-align: center; /* Centreer de knop */
+}
+
+.checkout-button .btn {
+  padding: 10px 20px; /* Voeg ruimte binnen de knop toe */
+  background-color: #56c0f1; /* Groene kleur */
+  color: #fff; /* Witte tekst */
+  border: none; /* Verwijder standaard rand */
+  border-radius: 5px; /* Maak de hoeken afgerond */
+  cursor: pointer; /* Verander de cursor naar pointer */
+  font-size: 1rem; /* Maak de tekstgrootte normaal */
+  font-weight: bold; /* Maak de tekst vetgedrukt */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Voeg animatie toe */
+}
+
+.checkout-button .btn:hover {
+  background-color: #2d7fd8; /* Donkerder groen bij hover */
+  transform: scale(1.05); /* Vergroot de knop iets bij hover */
+}
+
+.checkout-button .btn:focus {
+  outline: none; /* Verwijder standaard focus outline */
+  box-shadow: 0 0 5px #12797e; /* Voeg een schaduw toe bij focus */
+}
