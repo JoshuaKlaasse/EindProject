@@ -28,7 +28,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             // Redirect naar dashboard of gewenste pagina
-            return redirect()->intended('/dashboard')->with('success', 'Logged in successfully!');
+            return redirect()->intended('/')->with('success', 'Logged in successfully!');
         }
 
         // Login mislukt, stuur terug met foutmelding

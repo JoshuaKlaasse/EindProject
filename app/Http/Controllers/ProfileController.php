@@ -12,6 +12,6 @@ class ProfileController extends Controller
         $users = User::all(); // Haal alle gebruikers op
         $products = Product::all(); // Haal alle producten op
 
-        return view('user.profile', compact('users', 'products')); // Geef beide datasets door aan de view
+        return view('admin', compact('users', 'products')); // Geef beide datasets door aan de view
     }
 }

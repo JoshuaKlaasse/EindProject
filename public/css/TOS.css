@@ -1,47 +1,306 @@
+/* Terms of Service - Keep site theme, medieval text only */
 
+/* Parchment Document - Use site's consistent styling */
 .parchment {
-    background: url('parchment-texture.jpg') repeat;
-    padding: 2em;
-    
-    margin-top: 200px;
-    
-   
-    border: 4px double #8b5e3c;
-    background-color: #c4dff5;
-    border-radius: 12px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.3);
-    max-width: 800px;
-    
-    margin-bottom: 20px;
-   
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 3rem;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: slideInUp 0.6s ease-out;
+    font-family: 'Georgia', 'Times New Roman', serif;
 }
 
-h1, h2 {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    color: #5b3924;
+.parchment::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
-h1 {
+/* Main Title */
+.parchment h1 {
     text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-    text-shadow: 1px 1px #ddd;
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
 }
 
-h2 {
-    font-size: 1.5em;
-    margin-top: 1.5em;
-    border-bottom: 1px solid #c9b79c;
-    padding-bottom: 0.2em;
+.parchment h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 2px;
 }
 
-ul {
-    list-style: square inside;
-    margin-left: 0;
-    padding-left: 1em;
-}
-
-p em {
+/* Subtitle/Italic text */
+.parchment p em {
+    display: block;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 2.5rem;
     font-style: italic;
-    color: #7a6248;
+    line-height: 1.6;
+}
+
+/* Section Headers */
+.parchment h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin: 2.5rem 0 1.5rem 0;
+    font-weight: 600;
+    position: relative;
+    border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+.parchment h2::before {
+    content: '§';
+    position: absolute;
+    left: -30px;
+    color: #667eea;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Paragraphs */
+.parchment p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    text-indent: 2rem;
+}
+
+.parchment p:first-of-type {
+    text-indent: 0;
+}
+
+/* Strong text */
+.parchment strong {
+    color: #667eea;
+    font-weight: 700;
+}
+
+/* Lists */
+.parchment ul {
+    margin: 1.5rem 0;
+    padding-left: 3rem;
+    list-style: none;
+}
+
+.parchment li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin-bottom: 0.8rem;
+    position: relative;
+}
+
+.parchment li::before {
+    content: '⚜';
+    position: absolute;
+    left: -2rem;
+    color: #667eea;
+    font-size: 1.2rem;
+}
+
+/* Links */
+.parchment a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.parchment a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+/* Special styling for final paragraph */
+.parchment p:last-child {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border: 2px solid #e9ecef;
+    text-indent: 0;
+}
+
+/* Decorative elements */
+.parchment p:last-child::before,
+.parchment p:last-child::after {
+    content: '❦';
+    color: #667eea;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+}
+
+/* Animation for document appearance */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced visual effects */
+.parchment::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.02) 0%, transparent 70%);
+    animation: float 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% { 
+        transform: translateY(-10px) rotate(180deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .parchment {
+        margin: 1rem;
+        padding: 2rem;
+        max-width: none;
+    }
+    
+    .parchment h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .parchment h1::after {
+        width: 80px;
+    }
+    
+    .parchment h2 {
+        font-size: 1.3rem;
+        margin: 2rem 0 1rem 0;
+    }
+    
+    .parchment h2::before {
+        left: -25px;
+        font-size: 1.6rem;
+    }
+    
+    .parchment p,
+    .parchment li {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    .parchment p {
+        text-indent: 1.5rem;
+    }
+    
+    .parchment ul {
+        padding-left: 2.5rem;
+    }
+    
+    .parchment li::before {
+        left: -1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .parchment {
+        margin: 0.5rem;
+        padding: 1.5rem;
+    }
+    
+    .parchment h1 {
+        font-size: 1.6rem;
+    }
+    
+    .parchment h1::after {
+        width: 60px;
+    }
+    
+    .parchment h2 {
+        font-size: 1.2rem;
+    }
+    
+    .parchment h2::before {
+        left: -20px;
+        font-size: 1.4rem;
+    }
+    
+    .parchment p,
+    .parchment li {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .parchment p {
+        text-indent: 1rem;
+    }
+    
+    .parchment ul {
+        padding-left: 2rem;
+    }
+    
+    .parchment li::before {
+        left: -1.5rem;
+        font-size: 1rem;
+    }
+    
+    .parchment p:last-child {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+}
+
+/* Focus states for accessibility */
+.parchment a:focus {
+    outline: 2px solid rgba(102, 126, 234, 0.5);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Selection styling */
+.parchment ::selection {
+    background: rgba(102, 126, 234, 0.2);
+    color: #2c3e50;
+}
+
+.parchment ::-moz-selection {
+    background: rgba(102, 126, 234, 0.2);
+    color: #2c3e50;
 }

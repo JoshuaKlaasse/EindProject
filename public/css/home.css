@@ -1,0 +1,419 @@
+/* Main Content Styles */
+#main_content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Sales Section */
+#sales {
+    margin-bottom: 4rem;
+    display: flex; /* Gebruik flexbox */
+    flex-wrap: wrap; /* Zorg ervoor dat producten naar de volgende rij gaan als er geen ruimte meer is */
+    flex-direction: row;
+    gap: 1rem; /* Voeg ruimte tussen de producten toe */
+    justify-content: space-around; /* Verspreid de producten gelijkmatig */
+}
+
+#sales_header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+#sales_header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+#sales_header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    border-radius: 2px;
+}
+
+/* Sales products in a row */
+.sales_product {
+    flex: 1 1 calc(33.333% - 1rem); /* Zorg ervoor dat elk product 1/3 van de rij inneemt */
+    box-sizing: border-box; /* Houd rekening met padding en borders */
+    max-width: calc(33.333% - 1rem); /* Stel een maximale breedte in */
+    text-align: center; /* Centreer de inhoud */
+    background-color: #f9f9f9; /* Optioneel: voeg een achtergrondkleur toe */
+    padding: 1rem; /* Voeg padding toe */
+    border: 1px solid #ddd; /* Optioneel: voeg een rand toe */
+    border-radius: 8px; /* Optioneel: voeg afgeronde hoeken toe */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.sales_product::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+}
+
+.sales_product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.sales_product h2 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* Popular Products Section */
+#Popular_product {
+    margin-bottom: 4rem;
+    display: flex; /* Gebruik flexbox */
+    flex-wrap: wrap; /* Zorg ervoor dat producten naar de volgende rij gaan als er geen ruimte meer is */
+    flex-direction: row;
+    gap: 1rem; /* Voeg ruimte tussen de producten toe */
+    justify-content: space-around; /* Verspreid de producten gelijkmatig */
+}
+
+#popular_header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#popular_header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+#popular_header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+#popular_description {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Popular products in a row */
+#popular_description .popular_product {
+    display: inline-block;
+    width: calc(33.333% - 1.5rem);
+    margin-right: 2rem;
+    vertical-align: top;
+}
+
+#popular_description .popular_product:last-child {
+    margin-right: 0;
+}
+
+.popular_product {
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+#popular_description {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.popular_product::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.popular_product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.popular_product h2 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* Product Images */
+.product_image {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product_image:hover {
+    transform: scale(1.05);
+}
+
+/* Price Styling */
+.priceProduct {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #27ae60;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styling */
+.btn {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    background: linear-gradient(135deg, #ff5252, #ff7043);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+}
+
+/* Popular products specific button styling */
+.popular_product .btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.popular_product .btn:hover {
+    background: linear-gradient(135deg, #5a67d8, #6b46c1);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    #main_content {
+        padding: 1.5rem;
+    }
+    
+    .sales-products-container,
+    .popular-products-container {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    
+    .sales_product,
+    .popular_product {
+        max-width: 400px;
+        width: 100%;
+    }
+    
+    #sales_header h1,
+    #popular_header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sales-products-container,
+    .popular-products-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #main_content {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    
+    #sales {
+        margin-bottom: 2rem;
+    }
+    
+    #Popular_product {
+        padding: 2rem 1rem;
+    }
+    
+    .sales_product,
+    .popular_product {
+        padding: 1.5rem;
+        min-width: auto;
+    }
+    
+    #sales_header h1,
+    #popular_header h1 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .product_image {
+        max-width: 150px;
+        height: 150px;
+    }
+    
+    .priceProduct {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #main_content {
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+    
+    .sales_product,
+    .popular_product {
+        padding: 1rem;
+    }
+    
+    #sales_header h1,
+    #popular_header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .sales_product h2,
+    .popular_product h2 {
+        font-size: 1.2rem;
+    }
+    
+    .product_image {
+        max-width: 120px;
+        height: 120px;
+    }
+    
+    .priceProduct {
+        font-size: 1.3rem;
+    }
+    
+    .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Loading animation for images */
+.product_image {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.product_image[src] {
+    background: none;
+    animation: none;
+}
+
+/* Focus states for accessibility */
+.btn:focus {
+    outline: 3px solid rgba(255, 107, 107, 0.5);
+    outline-offset: 2px;
+}
+
+.popular_product .btn:focus {
+    outline: 3px solid rgba(102, 126, 234, 0.5);
+}
+
+/* Print styles */
+@media print {
+    .btn {
+        background: #333 !important;
+        color: white !important;
+        box-shadow: none !important;
+    }
+    
+    .product_image {
+        box-shadow: none !important;
+    }
+    
+    .sales_product,
+    .popular_product {
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3) !important;
+        break-inside: avoid;
+    }
+}

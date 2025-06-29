@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "EindProject",
+			"path": "."
+		},
+		{
+			"name": "vendor",
+			"path": "../Deze is cooked/vendor"
+		}
+	],
+	"settings": {}
+}

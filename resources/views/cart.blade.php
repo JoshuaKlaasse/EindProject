@@ -1,35 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/cart.css">
-    <link rel="stylesheet" href="../css/header_footer.css"> 
-</head>
-<body>
+@extends('layouts.MasterLayout') <!-- Verbind met de master layout -->
 
-<div id="header">
-    <div id="logo">
-        <a href="{{ url('/') }}">
-            <img src="../Images/logo.png" alt="logo" id="logo">
-        </a>
-    </div>
-    <div id="search">
-        <form action="{{ url('/search') }}" method="GET" class="search-form">
-            <input type="text" name="query" placeholder="Zoek naar producten..." class="search-input" required>
-            <button type="submit" class="search-button">
-                <img src="../images/search.icon.png" alt="Search">
-            </button>
-        </form>
-    </div>
-      <nav class="navigation">
-        <div class="header-links">
-          <a href="login"><button class="btnlogin-popup">login</button></a>
-          <a href="cart"><button class="btncart-popup"><img class="buttonimage" src="../images/basket-cart-icon-27.png"></button></a>
-        </div>
-    </nav>
-</div>
+@section('title', 'Home - Nederkwaliteit') <!-- Vul de title placeholder -->
+
+@section('content') <!-- Vul de content placeholder -->
+
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/cart.css') }}"> <!-- Voeg de CSS toe voor de home pagina -->
+@endsection
     <div class="cart-container">
     <h1>Winkelwagen</h1>
 
@@ -74,4 +51,4 @@
     @endif
 </div>
 </body>
-</html>
+@endsection

@@ -17,11 +17,6 @@ Route::get('/frequent', function () {
     return view('frequentlyasked'); // resources/views/FAQ.blade.php
 });
 
-
-Route::get('/register', function () {
-    return view('register');
-});
-
 Route::get('/terms', function () {
     return view('termsofservice'); // resources/views/terms-of-service.blade.php
 });
@@ -36,10 +31,6 @@ Route::get('/payment', function () {
 Route::get('/cart', function () {
     return view('cart');
 }); 
-
-Route::get('/admin', function () {
-    return view('admin'); // resources/views/terms-of-service.blade.php
-});
 
 Route::get('/create', function () {
     return view('create'); 
@@ -65,11 +56,9 @@ Route::post('/update/{id}', function (Request $request, $id) {
     }
 
     $user->name = $request->input('name');
-    $user->email = $request->input('email');
-    $user->password = bcrypt($request->input('password')); 
     $user->save();
 
-    return redirect('/user/profile')->with('success', 'User updated successfully');
+    return redirect('/admin'); // Redirect naar admin na update
 });
 
 Route::get('/updateProduct', function (Request $request) {
@@ -165,7 +154,8 @@ Route::post('/create', function (Request $request) {
     return redirect('/user/profile')->with('success', 'User created successfully');
 });
 
-Route::get('/user/profile', [ProfileController::class, 'index']);
+// Verwijder of wijzig bestaande routes die naar /user/profile gaan
+Route::get('/admin', [ProfileController::class, 'index'])->name('admin.index'); // Verwijst nu naar admin view
 
 Route::get('/login', [LoginController::class, 'login']); // Toon de loginpagina
 Route::post('/login', [LoginController::class, 'authenticate']); // Verwerk de login

@@ -9,7 +9,7 @@ class HomeController extends Controller
     public function index()
     {
         // Haal specifieke producten op
-        $product1 = Product::find(1); // Product with ID 1
+        $product1 = Product::find(13); // Product with ID 1
         $product2 = Product::find(2); // Product with ID 2
         $product3 = Product::find(4); // Product with ID 3
         $product4 = Product::find(5); // Product with ID 4
@@ -20,7 +20,8 @@ class HomeController extends Controller
         $product9 = Product::find(10); // Product with ID 9
         $product10 = Product::find(11); // Product with ID 10
         $product11 = Product::find(12); // Product with ID 11
-        $product12 = Product::find(13); // Product with ID 12
+        $product12 = Product::find(14); // Product with ID 12
+
 
         // Geef de producten door aan de view
         return view('/Home', [

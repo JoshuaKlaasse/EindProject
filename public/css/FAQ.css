@@ -1,65 +1,285 @@
+/* FAQ Container */
 .faq-container {
   max-width: 800px;
-  margin: 2rem auto;
-  margin-top: 200px;
-  padding: 1rem;
-  font-family: 'Georgia', serif;
-  color: #222;
-  background: #c0d9e8;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Main Title */
 .faq-container h1 {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  line-height: 1.3;
+  position: relative;
+  padding-bottom: 1rem;
 }
 
+.faq-container h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  border-radius: 2px;
+}
+
+/* FAQ Item */
 .faq {
   margin-bottom: 1rem;
-  border-bottom: 1px dashed #aaa;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
+.faq:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border-color: rgba(255, 107, 107, 0.2);
+}
+
+/* FAQ Question Button */
 .faq-question {
-  background: #d1ecf1;
-  border: none;
   width: 100%;
+  padding: 1.5rem 2rem;
+  background: transparent;
+  border: none;
   text-align: left;
-  padding: 1rem;
   font-size: 1.1rem;
-  font-weight: bold;
+  font-weight: 600;
+  color: #2c3e50;
   cursor: pointer;
-  transition: background 0.3s;
-  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1.4;
 }
 
 .faq-question:hover {
-  background: #bee3e9;
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.05), rgba(255, 142, 83, 0.05));
+  color: #ff6b6b;
 }
 
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 1rem;
-  font-style: italic;
-  font-size: 0.95rem;
-  color: #555;
-  transition: max-height 0.4s ease, padding 0.4s ease;
+.faq-question:focus {
+  outline: 2px solid #ff6b6b;
+  outline-offset: -2px;
 }
 
-.faq-answer.visible {
-  max-height: 200px;
-  padding: 1rem;
+/* Plus/Minus Icon */
+.faq-question::after {
+  content: '+';
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff6b6b;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 1rem;
 }
 
 .faq-question.open::after {
-  content: " ▲";
-  float: right;
+  content: '−';
+  transform: rotate(180deg);
 }
 
-.faq-question::after {
-  content: " ▼";
-  float: right;
+/* FAQ Answer */
+.faq-answer {
+  padding: 0 2rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(118, 75, 162, 0.02));
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
+.faq-answer.visible {
+  padding: 1.5rem 2rem 2rem 2rem;
+  max-height: 200px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Special styling for italic text */
+.faq-answer i {
+  color: #667eea;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faq-container {
+      margin: 1rem;
+      padding: 1.5rem;
+  }
+  
+  .faq-container h1 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+  }
+  
+  .faq-question {
+      padding: 1.2rem 1.5rem;
+      font-size: 1rem;
+  }
+  
+  .faq-question::after {
+      font-size: 1.3rem;
+  }
+  
+  .faq-answer.visible {
+      padding: 1.2rem 1.5rem 1.5rem 1.5rem;
+      max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-container {
+      margin: 0.5rem;
+      padding: 1rem;
+  }
+  
+  .faq-container h1 {
+      font-size: 1.5rem;
+      line-height: 1.2;
+  }
+  
+  .faq-question {
+      padding: 1rem;
+      font-size: 0.95rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+  }
+  
+  .faq-question::after {
+      align-self: flex-end;
+      margin-left: 0;
+      margin-top: -1.5rem;
+  }
+  
+  .faq-answer.visible {
+      padding: 1rem;
+      font-size: 0.9rem;
+  }
+}
+
+/* Animation for smooth opening */
+@keyframes slideDown {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.faq-answer.visible {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Hover effects for better interactivity */
+.faq:nth-child(even) .faq-question:hover {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+  color: #667eea;
+}
+
+.faq:nth-child(even) .faq-question::after {
+  color: #667eea;
+}
+
+/* Active state styling */
+.faq-question.open {
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.08), rgba(255, 142, 83, 0.08));
+  color: #ff6b6b;
+}
+
+.faq:nth-child(even) .faq-question.open {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
+  color: #667eea;
+}
+
+/* Accessibility improvements */
+.faq-question:focus-visible {
+  outline: 3px solid #ff6b6b;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .faq-container {
+      box-shadow: none;
+      background: white;
+  }
+  
+  .faq {
+      box-shadow: none;
+      border: 1px solid #ddd;
+      break-inside: avoid;
+      margin-bottom: 1rem;
+  }
+  
+  .faq-question::after {
+      display: none;
+  }
+  
+  .faq-answer {
+      max-height: none !important;
+      padding: 1rem 2rem !important;
+      display: block !important;
+  }
+  
+  .faq-container h1::after {
+      display: none;
+  }
+}
+
+/* Loading state for dynamic content */
+.faq.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.faq.loading .faq-question::after {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+/* Enhanced visual feedback */
+.faq-question:active {
+  transform: scale(0.98);
+}
+
+/* Gradient border effect on focus */
+.faq:focus-within {
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #ff6b6b, #ff8e53) border-box;
+  border: 2px solid transparent;
+}
+
+.faq:nth-child(even):focus-within {
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #667eea, #764ba2) border-box;
+}

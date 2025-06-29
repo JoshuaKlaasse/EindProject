@@ -1,81 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+@extends('layouts.MasterLayout') <!-- Verbind met de master layout -->
+
+@section('title', 'Home - Nederkwaliteit') <!-- Vul de title placeholder -->
+
+@section('content') <!-- Vul de content placeholder -->
+
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}"> <!-- Voeg de CSS toe voor de home pagina -->
+@endsection
+<h1>Admin panel</h1>
+<div class="users">
+    <h2>Users</h2>
+
+    <table border="1">
+        <th>Name</th>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+        <th>Update</th>
+        <th>Delete</th>
     
-    <link rel="stylesheet" href="../css/header_footer.css">
-    <link rel="stylesheet" href="../css/admin.css">
-</head>
-<body>
-<div id="header">
-    <div id="logo">
-        <a href="{{ url('/') }}">
-            <img src="../Images/logo.png" alt="logo" id="logo">
-        </a>
-    </div>
-    <div id="search">
-        <form action="{{ url('/search') }}" method="GET" class="search-form">
-            <input type="text" name="query" placeholder="Zoek naar producten..." class="search-input" required>
-            <button type="submit" class="search-button">
-                <img src="../images/search.icon.png" alt="Search">
-            </button>
-        </form>
-    </div>
-      <nav class="navigation">
-        <div class="header-links">
-          <a href="login"><button class="btnlogin-popup">login</button></a>
-          <a href="cart"><button class="btncart-popup"><img class="buttonimage" src="../images/basket-cart-icon-27.png"></button></a>
-        </div>
-    </nav>
+    @foreach($users as $user)
+        <tr>
+            <td>{{$user->name}} </td>
+            <td>{{$user->id}}</td>
+            <td>{{$user->email}}</td>
+            <td>{{$user->created_at}}</td>
+            <td>{{$user->updated_at}}</td>
+            <td><a href="{{url('/update?id=').$user->id}}">Update</a></td>
+            <td><a href="{{ url('/delete?id=' . $user->id) }}" onclick="return confirm('Weet je zeker dat je deze gebruiker wilt verwijderen?')">Delete</a></td>
+        </tr>
+    @endforeach
+    </table>
+    <a href="{{ url('/create') }}">Add User</a>
 </div>
-<h1>Admin Panel</h1>
-<a href="create">Create Users</a>
-<?php
-//Database read for users
-$users = DB::table('users')->get(); // Selects all users
+<div class="products">
+    <h2>Products</h2>
 
-echo "<table border='1'>";
-echo "<th>ID</th>";
-echo "<th>Name</th>";
-echo "<th>Email</th>";
-echo "<th>Email Verified At</th>";
-echo "<th>Password</th>";
-echo "<th>Created At</th>";
-echo "<th>Updated At</th>";
-echo "<th> update </th>";
-echo "<th> delete </th>";
-foreach ($users as $user) {
-    echo "<tr>";
-    echo "<td>" . $user->id . "</td>";
-    echo "<td>" . $user->name . "</td>";
-    echo "<td>" . $user->email . "</td>";
-    echo "<td>" . $user->email_verified_at . "</td>";
-    echo "<td>" . $user->password . "</td>";
-    echo "<td>" . $user->created_at . "</td>";
-    echo "<td>" . $user->updated_at . "</td>";
-    echo "<td><a href='update'>Update</a></td>";
-    echo "<td><a href='delete'>Delete</a></td>";
-    echo "</tr>";
-}
-echo "</table>";
-?>
+    <table border="1">
+        <th>Name</th>
+        <th>Id</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Stock</th>
+        <th>Image</th>
+        <th>Update</th>
+        <th>Delete</th>
 
-
-tests
-
-<?php ?>
-<div class="footer">
-  <div class="motto">
-    <p>© Nederkwaliteit – Expect the worst, and we will still find a way to disappoint you.</p>
-  </div>
-  <nav class="navigationfooter">
-    <a href="frequent">FAQ</a>
-    <a href="terms">TOS</a>
-    <a href="about">About Us</a>
-    
-  </nav>
+    @foreach($products as $product)
+        <tr>
+            <td>{{$product->name}}</td>
+            <td>{{$product->id}}</td>
+            <td>{{$product->price}}</td>
+            <td>{{$product->description}}</td>
+            <td>{{$product->stock}}</td>
+            <td><img src="{{ asset('/images/shirts/' . $product->image) }}" alt="Product Image" width="100"></td>
+            <td><a href="{{url('/updateProduct?id=').$product->id}}">Update</a></td>
+            <td><a href="{{ url('/deleteProduct?id=' . $product->id) }}" onclick="return confirm('Weet je zeker dat je dit product wilt verwijderen?')">Delete</a></td>
+        </tr>
+    @endforeach
+    </table>
+    <a href="{{ url('/createProduct') }}">Add Product</a>
 </div>
-</body>
-</html>
+@endsection 

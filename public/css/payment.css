@@ -1,86 +1,492 @@
+/* Payment Page Styling - Steam Layout with Site Colors */
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      display: flex;
-      gap: 40px;
-    }
-    
-    .right-box {
-      
-      background-color: #ACCBE1;
-       border: 2px solid white;
-        border-radius: 5px;
-        height: 400px;
-        margin-top: 150px;
-        box-shadow: 0 0 30px    rgba(0,0,0,0.3);
-    }
-    h2 {
-      color: #3c2f2f;
-    }
-    label {
-      display: block;
-      margin: 10px 0 4px;
-    }
-    input[type="text"],
-    select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #000000;
-      background-color: #fff;
-      color: #ffffff;
-      border-radius: 3px;
-    }
-    .form-row {
-      display: flex;
-      gap: 100px;
-    }
-    .form-row > div {
-      flex: 1;
-    }
-    .checkbox-label {
-      display: flex;
-      align-items: center;
-      margin-top: 10px;
-    }
-    .checkbox-label input {
-      margin-right: 10px;
-    }
-    .submit-button {
-      display: inline-block;
-    padding: 10px 20px;
-    background-color: #277cae; /* Groen */
-    color: #fff; /* Witte tekst */
-    text-align: center;
-    border: none;
-    border-radius: 5px; /* Afgeronde hoeken */
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    text-decoration: none; /* Geen onderstreping */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    .submit-button:hover {
-       background-color: #2491c7; /* Donkerder groen */
-        transform: scale(1.05);
-    }
-    .submit-button:focus {
-        outline: none; 
-        box-shadow: 0 0 5px #27ae60; 
-    }
-    .payment-icons {
-      margin-top: 10px;
-    }
-    .payment-icons img {
-      height: 32px;
-      margin: 4px;
-    }
-    a {
-      color: #162938;
-      
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  animation: slideInUp 0.6s ease-out;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Left Box - Payment Form */
+.left-box {
+  flex: 2;
+  background: #f8f9fa;
+  padding: 2.5rem;
+  border-radius: 15px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.left-box:hover {
+  border-color: rgba(102, 126, 234, 0.3);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.1);
+}
+
+.left-box h2 {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.left-box h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+/* Form Elements */
+.left-box select,
+.left-box input[type="text"] {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: #fff;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  color: #2c3e50;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  outline: none;
+}
+
+.left-box select:focus,
+.left-box input[type="text"]:focus {
+  border-color: #667eea;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+}
+
+.left-box select:hover,
+.left-box input[type="text"]:hover {
+  border-color: #bdc3c7;
+  background: #fff;
+}
+
+/* Labels */
+.left-box label {
+  display: block;
+  color: #2c3e50;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.left-box label:first-of-type {
+  margin-top: 0;
+}
+
+/* Form Row */
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-row > div {
+  flex: 1;
+}
+
+.form-row label {
+  margin-top: 0;
+}
+
+/* Checkbox */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.checkbox-label:hover {
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #667eea;
+  margin: 0;
+  cursor: pointer;
+}
+
+.checkbox-label label {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Paragraphs */
+.left-box p {
+  color: #6c757d;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
+.left-box p a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.left-box p a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 1.2rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.submit-button:hover::before {
+  left: 100%;
+}
+
+.submit-button:hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.submit-button:active {
+  transform: translateY(-1px);
+}
+
+/* Right Box - Payment Methods */
+.right-box {
+  flex: 1;
+  background: #f8f9fa;
+  padding: 2.5rem;
+  border-radius: 15px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.right-box:hover {
+  border-color: rgba(102, 126, 234, 0.3);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.1);
+}
+
+.right-box h2 {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.right-box h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.right-box p {
+  color: #2c3e50;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Payment Icons */
+.payment-icons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.payment-icons img {
+  width: 100%;
+  max-width: 80px;
+  height: 40px;
+  object-fit: contain;
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.payment-icons img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+}
+
+/* Enhanced visual effects */
+.container::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.02) 0%, transparent 70%);
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes float {
+  0%, 100% { 
+      transform: translateY(0px) rotate(0deg);
+  }
+  50% { 
+      transform: translateY(-10px) rotate(180deg);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .container {
+      flex-direction: column;
+      margin: 1rem;
+      padding: 1.5rem;
+  }
+  
+  .left-box,
+  .right-box {
+      padding: 2rem;
+  }
+  
+  .form-row {
+      flex-direction: column;
+      gap: 0;
+  }
+  
+  .payment-icons {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+      margin: 0.5rem;
+      padding: 1rem;
+  }
+  
+  .left-box,
+  .right-box {
+      padding: 1.5rem;
+  }
+  
+  .left-box h2,
+  .right-box h2 {
+      font-size: 1.2rem;
+  }
+  
+  .payment-icons {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+  }
+  
+  .payment-icons img {
+      max-width: 70px;
+      height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      margin: 0.25rem;
+      padding: 0.8rem;
+  }
+  
+  .left-box,
+  .right-box {
+      padding: 1.2rem;
+  }
+  
+  .left-box h2,
+  .right-box h2 {
+      font-size: 1.1rem;
+  }
+  
+  .left-box select,
+  .left-box input[type="text"] {
+      padding: 0.8rem 1.2rem;
+      font-size: 0.95rem;
+  }
+  
+  .submit-button {
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+  }
+  
+  .payment-icons img {
+      max-width: 60px;
+      height: 30px;
+  }
+}
+
+/* Focus states for accessibility */
+.submit-button:focus {
+  outline: 3px solid rgba(102, 126, 234, 0.5);
+  outline-offset: 2px;
+}
+
+.left-box select:focus,
+.left-box input[type="text"]:focus {
+  outline: none;
+}
+
+.left-box a:focus {
+  outline: 2px solid rgba(102, 126, 234, 0.5);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Loading state for submit button */
+.submit-button.loading {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+
+.submit-button.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid #fff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Select dropdown styling */
+.left-box select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667eea' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 3rem;
+}
+
+/* Option styling */
+.left-box select option {
+  background: #fff;
+  color: #2c3e50;
+  padding: 0.5rem;
+}
+
+/* Input validation states */
+.left-box input:valid:not(:placeholder-shown) {
+  border-color: #27ae60;
+  background: #f8fff8;
+}
+
+.left-box input:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: #e74c3c;
+  background: #fdf2f2;
+}
+
+/* Enhanced button states */
+.submit-button:not(:disabled):hover {
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.submit-button:not(:disabled):active {
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.submit-button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}

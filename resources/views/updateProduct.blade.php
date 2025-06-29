@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="../css/header_footer.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
 <div id="header">
     <div id="logo">
         <a href="{{ url('/') }}">
@@ -19,6 +23,7 @@
         </div>
     </nav>
 </div>
+<div class="form-container3">
 <h1>Update product: {{ $product->name }}</h1>
 
 <form method="POST" action="{{ url('/updateProduct/' . $product->id) }}">
@@ -42,6 +47,7 @@
 
     <button type="submit">Update</button>
 </form>
+</div>
 </div>
 <div class="footer">
   <div class="motto">

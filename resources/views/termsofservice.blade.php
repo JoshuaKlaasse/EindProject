@@ -1,32 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Terms of Service | FastThread Mercantile</title>
-    <link rel="stylesheet" href="../css/TOS.css">
-    <link rel="stylesheet" href="../css/header_footer.css">
-</head>
-<body>
-<div id="header">
-    <div id="logo">
-        <a href="{{ url('/') }}">
-            <img src="../Images/logo.png" alt="logo" id="logo">
-        </a>
-    </div>
-    <div id="search">
-        <form action="{{ url('/search') }}" method="GET" class="search-form">
-            <input type="text" name="query" placeholder="Zoek naar producten..." class="search-input" required>
-            <button type="submit" class="search-button">
-                <img src="../images/search.icon.png" alt="Search">
-            </button>
-        </form>
-    </div>
-      <nav class="navigation">
-        <div class="header-links">
-          <a href="login"><button class="btnlogin-popup">login</button></a>
-          <a href="cart"><button class="btncart-popup"><img class="buttonimage" src="../images/basket-cart-icon-27.png"></button></a>
-        </div>
-    </nav>
+@extends('layouts.MasterLayout')
+
+@section('title', 'Product - Nederkwaliteit')
+
+@section('content')
+
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/TOS.css') }}">
+@endsection
 </div>
     <div class="parchment">
         <h1>📜 Terms of Service of FastThread Mercantile</h1>
@@ -69,17 +49,6 @@
 
         <p><em>Go now, noble shopper, and may thy parcels be swift and thy seams mostly intact.</em></p>
     </div>
-
-   <div class="footer">
-  <div class="motto">
-    <p>© Nederkwaliteit – Expect the worst, and we will still find a way to disappoint you.</p>
-  </div>
-  <nav class="navigationfooter">
-    <a href="frequent">FAQ</a>
-    <a href="terms">TOS</a>
-    <a href="about">About Us</a>
-    
-  </nav>
-</div>
+    </div>
 </body>
-</html>
+@endsection

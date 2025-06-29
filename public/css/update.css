@@ -1,6 +1,6 @@
 /* Search Results Page Styling */
 
-/* Main Container - Only affect the search results page */
+/* Search Results Container */
 .search-results-container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -23,7 +23,7 @@
     background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
-/* Search Results Title - Only target h1 inside search results */
+/* Search Results Title */
 .search-results-container h1 {
     text-align: center;
     font-size: 2.2rem;
@@ -47,7 +47,7 @@
     border-radius: 2px;
 }
 
-/* No Results Message - Only inside search results */
+/* No Results Message */
 .search-results-container > p {
     text-align: center;
     font-size: 1.2rem;
@@ -59,7 +59,7 @@
     border-left: 4px solid #667eea;
 }
 
-/* Products List - Only inside search results */
+/* Products List */
 .search-results-container ul {
     list-style: none;
     padding: 0;
@@ -70,7 +70,7 @@
     margin-top: 2rem;
 }
 
-/* Individual Product Item - Only inside search results */
+/* Individual Product Item */
 .search-results-container li {
     background: #f8f9fa;
     border-radius: 15px;
@@ -106,7 +106,7 @@
     transform: scaleX(1);
 }
 
-/* Product Title - Only inside search results */
+/* Product Title */
 .search-results-container li h2 {
     font-size: 1.4rem;
     color: #2c3e50;
@@ -117,7 +117,7 @@
     text-align: center;
 }
 
-/* Product Description - Only inside search results */
+/* Product Description */
 .search-results-container #description {
     font-size: 1rem;
     color: #2c3e50;
@@ -132,7 +132,7 @@
     flex-grow: 1;
 }
 
-/* Product Price - Only inside search results */
+/* Product Price */
 .search-results-container li p:not(#description) {
     font-size: 1.5rem;
     color: #667eea;
@@ -147,11 +147,11 @@
     letter-spacing: 1px;
 }
 
-/* Product Image - Only inside search results */
+/* Product Image */
 .search-results-container .product-image {
     width: 100%;
     max-width: 300px;
-    height: 250px; /* Increased height */
+    height: 250px;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -165,13 +165,13 @@
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Order Form - Only inside search results */
+/* Order Form */
 .search-results-container li form {
     margin-top: auto;
     width: 100%;
 }
 
-/* Order Button - Only inside search results */
+/* Order Button */
 .search-results-container .btn {
     width: 100%;
     background: linear-gradient(135deg, #667eea, #764ba2);
@@ -215,8 +215,159 @@
     transform: translateY(-1px);
 }
 
+/* ===== FORM CONTAINER STYLES ===== */
+
+/* Form Container */
+.form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 3rem;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: slideInUp 0.6s ease-out;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Form Title */
+.form-container h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.form-container h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+/* Form Styling */
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Form Labels */
+.form-container label {
+    font-size: 1rem;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Form Inputs */
+.form-container input[type="text"],
+.form-container input[type="email"] {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    color: #2c3e50;
+    font-family: inherit;
+    outline: none;
+    margin-bottom: 0.5rem;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus {
+    border-color: #667eea;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.form-container input[type="text"]:hover,
+.form-container input[type="email"]:hover {
+    border-color: #bdc3c7;
+    background: #fff;
+}
+
+/* Old Value Display */
+.form-container p {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin: 0 0 1rem 0;
+    padding: 0.8rem 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    font-style: italic;
+}
+
+/* Submit Button */
+.form-container button[type="submit"] {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 1.2rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.form-container button[type="submit"]:hover::before {
+    left: 100%;
+}
+
+.form-container button[type="submit"]:hover {
+    background: linear-gradient(135deg, #5a67d8, #6b46c1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.form-container button[type="submit"]:active {
+    transform: translateY(-1px);
+}
+
 /* Enhanced visual effects */
-.search-results-container::after {
+.form-container::after {
     content: '';
     position: absolute;
     top: -50%;
@@ -267,15 +418,22 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .search-results-container {
+    .search-results-container,
+    .form-container {
         margin: 1rem;
         padding: 1.5rem;
         max-width: none;
     }
     
-    .search-results-container h1 {
+    .search-results-container h1,
+    .form-container h1 {
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
+    }
+    
+    .search-results-container h1::after,
+    .form-container h1::after {
+        width: 80px;
     }
     
     .search-results-container ul {
@@ -306,20 +464,34 @@
         height: 200px;
     }
     
-    .search-results-container .btn {
+    .search-results-container .btn,
+    .form-container button[type="submit"] {
         padding: 0.9rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .form-container input[type="text"],
+    .form-container input[type="email"] {
+        padding: 0.9rem 1.2rem;
         font-size: 0.95rem;
     }
 }
 
 @media (max-width: 480px) {
-    .search-results-container {
+    .search-results-container,
+    .form-container {
         margin: 0.5rem;
         padding: 1rem;
     }
     
-    .search-results-container h1 {
+    .search-results-container h1,
+    .form-container h1 {
         font-size: 1.6rem;
+    }
+    
+    .search-results-container h1::after,
+    .form-container h1::after {
+        width: 60px;
     }
     
     .search-results-container li {
@@ -345,14 +517,38 @@
         height: 180px;
     }
     
-    .search-results-container .btn {
+    .search-results-container .btn,
+    .form-container button[type="submit"] {
         padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .form-container input[type="text"],
+    .form-container input[type="email"] {
+        padding: 0.8rem 1rem;
         font-size: 0.9rem;
     }
 }
 
 /* Focus states for accessibility */
-.search-results-container .btn:focus {
+.search-results-container .btn:focus,
+.form-container button[type="submit"]:focus {
     outline: 3px solid rgba(102, 126, 234, 0.5);
     outline-offset: 2px;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus {
+    outline: none;
+}
+
+/* Input validation states */
+.form-container input:valid:not(:placeholder-shown) {
+    border-color: #27ae60;
+    background: #f8fff8;
+}
+
+.form-container input:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #e74c3c;
+    background: #fdf2f2;
 }

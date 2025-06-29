@@ -1,32 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create User</title>
-    <link rel="stylesheet" href="../css/header_footer.css">
-    <link rel="stylesheet" href="../css/admin.css">
-</head>
-<body>
-<div id="header">
-    <div id="logo">
-        <a href="{{ url('/') }}">
-            <img src="../Images/logo.png" alt="logo" id="logo">
-        </a>
-    </div>
-    <div id="search">
-        <form action="{{ url('/search') }}" method="GET" class="search-form">
-            <input type="text" name="query" placeholder="Zoek naar producten..." class="search-input" required>
-            <button type="submit" class="search-button">
-                <img src="../images/search.icon.png" alt="Search">
-            </button>
-        </form>
-    </div>
-      <nav class="navigation">
-        <div class="header-links">
-          <a href="login"><button class="btnlogin-popup">login</button></a>
-          <a href="cart"><button class="btncart-popup"><img class="buttonimage" src="../images/basket-cart-icon-27.png"></button></a>
-        </div>
-    </nav>
-</div>
+@extends('layouts.MasterLayout') <!-- Verbind met de master layout -->
+
+@section('title', 'Home - Nederkwaliteit') <!-- Vul de title placeholder -->
+
+@section('content') <!-- Vul de content placeholder -->
+
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/create.css') }}"> <!-- Voeg de CSS toe voor de home pagina -->
+@endsection
+<div class="form-container">
     <h1>Add a New User</h1>
 
     <a href="{{ url('/user/profile') }}">Back to User List</a>
@@ -39,7 +20,7 @@
         </ul>
     @endif
 
-<form method="POST" action="{{ url('/create') }}">
+<form method="POST" action="{{ url('/create') }}" id="create-form">
     @csrf
     <label for="name">Naam:</label>
     <input type="text" id="name" name="name" required>
@@ -50,19 +31,9 @@
     <label for="password">Wachtwoord:</label>
     <input type="password" id="password" name="password" required>
 
-    <button type="submit">Aanmaken</button>
+    <button type="submit" id="submit">Aanmaken</button>
 </form>
 </div>
-<div class="footer">
-  <div class="motto">
-    <p>© Nederkwaliteit – Expect the worst, and we will still find a way to disappoint you.</p>
-  </div>
-  <nav class="navigationfooter">
-    <a href="frequent">FAQ</a>
-    <a href="terms">TOS</a>
-    <a href="about">About Us</a>
-    
-  </nav>
 </div>
 </body>
-</html>
+@endsection
